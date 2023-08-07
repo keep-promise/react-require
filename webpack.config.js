@@ -1,4 +1,5 @@
 const path = require('path');
+const WebpackBar = require('webpackbar');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /** @type {import('webpack').Configuration} */
@@ -6,14 +7,14 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    count: './src/count.js'
+    count: './src/Comp/count.js'
   },
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js',
     libraryTarget: 'amd',
-    // clean: true,
+    clean: false,
   },
   resolve: {
     extensions: ['.js']
@@ -37,10 +38,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      // template: './public/index.html'
-      template: './public/index_amd.html'
-    })
+    new WebpackBar()
+    // new HtmlWebpackPlugin({
+    //   // template: './public/index.html'
+    //   template: './public/index_amd.html'
+    // })
   ],
-  externals: ['react', 'react-dom']
+  externals: ['react', 'react-dom'],
+  devtool: false,
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './index.css';
+import './count.css';
 
-export default function () {
+export default function Count() {
   const [count, setCount] = useState(0);
 
   return <div>

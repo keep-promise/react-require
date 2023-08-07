@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Count from './count';
+import Count from './Comp/count';
 import AsynAPP from './AsynAPP/lazyApp';
 
 export default function App() {
